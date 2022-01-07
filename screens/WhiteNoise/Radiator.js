@@ -6,6 +6,7 @@ import Constants from 'expo-constants';
 export default function Radiator() {
   return (
     <WebView
+      allowsFullscreenVideo
       style={styles.container}
       source={{ uri: 'https://www.youtube.com/watch?v=OZaNxvviBy8' }}
     />

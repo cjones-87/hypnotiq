@@ -6,6 +6,7 @@ import Constants from 'expo-constants';
 export default function Fan() {
   return (
     <WebView
+      allowsFullscreenVideo
       style={styles.container}
       source={{ uri: 'https://www.youtube.com/watch?v=C5Gm8UvxKlU' }}
     />

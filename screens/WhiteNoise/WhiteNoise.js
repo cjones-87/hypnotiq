@@ -19,6 +19,7 @@ export default function WhiteNoise({ navigation }) {
     >
       <SafeAreaView style={styles.text}>
         <ScrollView
+          horizontal={false}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
         >
