@@ -9,6 +9,7 @@ import {
   ScrollView,
   StatusBar,
 } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const whiteNoiseData = [
   {
@@ -63,62 +64,71 @@ const backgroundImage = require('../assets/backgroundImages/purpleSmokeSurroundi
 const MainMenu = ({ navigation }) => (
   <ImageBackground source={backgroundImage} style={styles.image}>
     <SafeAreaView style={styles.container}>
-      <SectionList
-        sections={whiteNoiseData}
-        stickySectionHeadersEnabled={false}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({ item }) => <Item title={item} />}
-        renderSectionHeader={({ section: { title } }) => (
+      <View>
+        <Text style={styles.header}>Available Sounds</Text>
+        <TouchableOpacity style={styles.button}>
           <Text
+            style={styles.text}
             onPress={() => navigation.navigate('White Noise')}
-            style={styles.header}
           >
-            {title}
+            🤍&nbsp;White Noise&nbsp;🤍
           </Text>
-        )}
-      />
-      <SectionList
-        sections={brownNoiseData}
-        stickySectionHeadersEnabled={false}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({ item }) => <Item title={item} />}
-        renderSectionHeader={({ section: { title } }) => (
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
           <Text
+            style={styles.text}
             onPress={() => navigation.navigate('Brown Noise')}
-            style={styles.header}
           >
-            {title}
+            🤎&nbsp;Brown Noise&nbsp;🤎
           </Text>
-        )}
-      />
-      <SectionList
-        sections={pinkNoiseData}
-        stickySectionHeadersEnabled={false}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({ item }) => <Item title={item} />}
-        renderSectionHeader={({ section: { title } }) => (
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
           <Text
+            style={styles.text}
             onPress={() => navigation.navigate('Pink Noise')}
-            style={styles.header}
           >
-            {title}
+            💖&nbsp;Pink Noise&nbsp;💖
           </Text>
-        )}
-      />
-      <SectionList
-        sections={blackNoiseData}
-        stickySectionHeadersEnabled={false}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({ item }) => <Item title={item} />}
-        renderSectionHeader={({ section: { title } }) => (
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
           <Text
+            style={styles.text}
             onPress={() => navigation.navigate('Black Noise')}
-            style={styles.header}
           >
-            {title}
+            🖤&nbsp;Black Noise&nbsp;🖤
           </Text>
-        )}
-      />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
+          <Text
+            style={styles.text}
+            onPress={() => navigation.navigate('Baby Jams')}
+          >
+            👼🏽&nbsp;Baby Jams&nbsp;👼🏽
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
+          <Text
+            style={styles.text}
+            onPress={() => navigation.navigate('Classical Jams')}
+          >
+            🎹&nbsp;&nbsp;Classical&nbsp;&nbsp;🎹
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button}>
+          <Text
+            style={styles.text}
+            onPress={() => navigation.navigate('Jazz Jams')}
+          >
+            🎷&nbsp;Jazz&nbsp;&nbsp;🎷
+          </Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   </ImageBackground>
 );
@@ -134,23 +144,32 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   header: {
-    flex: 1,
+    color: 'yellow',
     fontSize: 40,
-    color: 'white',
-    textAlign: 'center',
-    textShadowColor: 'black',
+    textAlign: 'justify',
+    textShadowColor: 'blue',
     textShadowOffset: { width: 1, height: 1 },
-    textShadowRadius: 1,
+    textShadowRadius: 50,
+    paddingBottom: 40,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    // alignContent: 'center',
+    alignSelf: 'center',
   },
-  title: {
-    flex: 1,
-    fontSize: 24,
-    color: 'dodgerblue',
-    textAlign: 'center',
-    textShadowColor: 'white',
+  text: {
+    color: 'yellow',
+    fontSize: 32,
+    textAlign: 'justify',
+    textShadowColor: 'blue',
     textShadowOffset: { width: 1, height: 1 },
-    textShadowRadius: 1,
+    textShadowRadius: 50,
   },
+  button: {
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+    padding: 10,
+  },
+
   image: {
     flex: 1,
     resizeMode: 'cover',

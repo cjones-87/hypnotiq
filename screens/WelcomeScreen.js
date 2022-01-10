@@ -12,10 +12,11 @@ export default function WelcomeScreen({ navigation }) {
         ref={backgroundVideo}
         style={styles.video}
         source={require('../assets/backgroundImages/Hypnotiq.mp4')}
-        resizeMode="contain"
+        resizeMode="stretch"
         shouldPlay
         isLooping
-        isMuted
+        isMuted={false}
+        volume={0.36}
       />
       <Text
         style={styles.text}
