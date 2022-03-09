@@ -77,9 +77,10 @@ export default class BlackNoiseFunFacts extends React.Component {
           scrollEventThrottle={10}
           pagingEnabled
           useNativeDriver
-          onScroll={Animated.event([
-            { nativeEvent: { contentOffset: { x: this.animVal } } },
-          ])}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { x: this.animVal } } }],
+            { useNativeDriver: false }
+          )}
         >
           {imageArray}
         </ScrollView>

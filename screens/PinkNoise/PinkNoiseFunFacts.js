@@ -19,7 +19,7 @@ const images = [
   'https://i.imgur.com/rTrfBaV.png',
 ];
 
-export default class BlackNoiseFunFacts extends React.Component {
+export default class PinkNoiseFunFacts extends React.Component {
   numItems = images.length;
   itemWidth = FIXED_BAR_WIDTH / this.numItems - (this.numItems - 1) * BAR_SPACE;
   animVal = new Animated.Value(0);
@@ -77,9 +77,10 @@ export default class BlackNoiseFunFacts extends React.Component {
           scrollEventThrottle={10}
           pagingEnabled
           useNativeDriver
-          onScroll={Animated.event([
-            { nativeEvent: { contentOffset: { x: this.animVal } } },
-          ])}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { x: this.animVal } } }],
+            { useNativeDriver: false }
+          )}
         >
           {imageArray}
         </ScrollView>
